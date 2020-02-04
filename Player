@@ -1,0 +1,45 @@
+public class Player {
+
+    String name;
+    int speed;
+    int healthPoint;
+    String food;
+    String skill;
+
+    public void run(){
+        System.out.println (this.name+" masih sehat");
+    }
+
+    public void IsDead() {
+        if (this.healthPoint <= 0) {
+            System.out.println(this.name + " sudah mati");
+        }
+    }
+
+    public void GainPoint() {
+        if (this.food == "roti") {
+            speed = speed + 10;
+        } else if (this.food == "coklat") {
+            speed = speed + 5;
+        }
+    }
+
+    public void cool(){
+        if (this.skill=="menembak"){
+            healthPoint = healthPoint - 5;
+        } else if (this.skill=="terbang"){
+            healthPoint = healthPoint - 10;
+        } else if (this.skill=="karate"){
+            healthPoint = healthPoint - 15;
+        }
+    }
+
+    public void CheckSpeed(){
+        System.out.println(this.name+" kecepatan sekarang adalah "+this.speed);
+    }
+
+    public void CheckHp(){
+        System.out.println(this.name+" Health point sekarang adalah "+this.healthPoint);
+    }
+
+}
