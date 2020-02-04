@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner baru = new Scanner (System.in);
+        Player satu = new Player();
+        System.out.println("Nama player : ");
+        satu.name = baru.nextLine();
+        System.out.println("Kecepatan player : ");
+        satu.speed = baru.nextInt();
+        System.out.println("Health Point player sekarang : ");
+        satu.healthPoint = baru.nextInt();
+        System.out.println("Tadi sebelum main makan apa? ");
+        satu.food = baru.nextLine();
+        System.out.println("Skill yang digunakan : ");
+        satu.skill = baru.nextLine();
+
+        satu.run();
+        satu.IsDead();
+        satu.CheckHp();
+        satu.CheckSpeed();
+
+        Player dua = new Player();
+        System.out.println("Nama player : ");
+        dua.name = baru.nextLine();
+        System.out.println("Kecepatan player : ");
+        dua.speed = baru.nextInt();
+        System.out.println("Health Point player sekarang : ");
+        dua.healthPoint = baru.nextInt();
+        System.out.println("Tadi sebelum main makan apa? ");
+        dua.food = baru.nextLine();
+        System.out.println("Skill yang digunakan : ");
+        dua.skill = baru.nextLine();
+
+        dua.run();
+        dua.IsDead();
+        dua.CheckHp();
+        dua.CheckSpeed();
+
+        if (satu.speed > dua.speed) {
+            satu.healthPoint = satu.healthPoint + 10;
+        } else if (dua.speed > satu.speed){
+            dua.healthPoint = dua.healthPoint + 10;
+        }
+
+        if (satu.healthPoint > dua.healthPoint) {
+            System.out.println("Player "+satu.name+" menang!!!");
+        } else {
+            System.out.println("Player "+dua.name+" menang!!!");
+
+        }
+    }
+}
